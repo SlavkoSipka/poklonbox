@@ -15,18 +15,19 @@ export default function CheckoutPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isOrderComplete, setIsOrderComplete] = useState(false);
 
   // Wait for client-side hydration
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Redirect if cart is empty (only after client-side hydration)
+  // Redirect if cart is empty (only after client-side hydration and NOT during order completion)
   useEffect(() => {
-    if (isClient && items.length === 0) {
+    if (isClient && items.length === 0 && !isOrderComplete && !isSubmitting) {
       router.push('/cart');
     }
-  }, [isClient, items.length, router]);
+  }, [isClient, items.length, isOrderComplete, isSubmitting, router]);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -107,12 +108,20 @@ export default function CheckoutPage() {
 
       await sendOrderEmail(orderData);
 
+      // Mark order as complete to prevent cart redirect
+      setIsOrderComplete(true);
+      
       // Clear cart and redirect to success
       clearCart();
-      router.push(`/success?order=${orderNumber}`);
+      
+      // Small delay to ensure state update
+      setTimeout(() => {
+        router.push(`/success?order=${orderNumber}`);
+      }, 100);
     } catch (error) {
       console.error('Order error:', error);
       toast.error('Došlo je do greške. Pokušajte ponovo.');
+      setIsOrderComplete(false);
     } finally {
       setIsSubmitting(false);
     }
