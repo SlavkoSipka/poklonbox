@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/lib/cart-context";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NavigationProgress from "@/components/NavigationProgress";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -41,9 +42,10 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
         <CartProvider>
+          <NavigationProgress />
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 animate-fadeIn">{children}</main>
             <Footer />
           </div>
           <Toaster
