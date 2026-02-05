@@ -33,3 +33,16 @@ body {
 * {
   scroll-behavior: smooth;
 }
+
+/* Loading animation delays */
+.animate-pulse.delay-0 {
+  animation-delay: 0ms;
+}
+
+.animate-pulse.delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-pulse.delay-200 {
+  animation-delay: 200ms;
+}

@@ -1,13 +1,23 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { CheckCircle, Home, Mail, Phone } from 'lucide-react';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 
 function SuccessContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const orderNumber = searchParams.get('order') || 'N/A';
+
+  // Auto redirect to home after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/');
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, [router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-rose-50 py-12">
@@ -79,20 +89,17 @@ function SuccessContent() {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col gap-4 justify-center">
             <Link
               href="/"
-              className="inline-flex items-center justify-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition"
+              className="inline-flex items-center justify-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <Home className="w-5 h-5" />
-              <span>Početna</span>
+              <span>Nazad na početnu</span>
             </Link>
-            <Link
-              href="/shop"
-              className="inline-flex items-center justify-center space-x-2 bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition"
-            >
-              <span>Nastavi kupovinu</span>
-            </Link>
+            <p className="text-center text-sm text-gray-500">
+              Automatski vraćanje za 10 sekundi...
+            </p>
           </div>
         </div>
       </div>
