@@ -36,12 +36,6 @@ function SuccessContent() {
             Vaša porudžbina je uspešno primljena i uskoro ćemo Vas kontaktirati.
           </p>
 
-          {/* Order Number */}
-          <div className="bg-rose-50 rounded-xl p-6 mb-8">
-            <p className="text-sm text-gray-600 mb-2">Broj porudžbine:</p>
-            <p className="text-2xl font-bold text-gray-900 font-mono">{orderNumber}</p>
-          </div>
-
           {/* Next Steps */}
           <div className="text-left mb-8">
             <h2 className="font-semibold text-gray-900 mb-4">Šta dalje?</h2>
