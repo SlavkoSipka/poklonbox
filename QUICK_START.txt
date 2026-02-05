@@ -1,0 +1,50 @@
+═══════════════════════════════════════════════════════════
+🌹 POKLONI - WEB SHOP ZA DAN ZALJUBLJENIH
+═══════════════════════════════════════════════════════════
+
+BRZI START (5 koraka):
+
+1️⃣  INSTALIRAJ PAKETE
+   npm install
+
+2️⃣  PODESI EMAILJS
+   - Idi na: https://www.emailjs.com/
+   - Napravi nalog (BESPLATNO)
+   - Dodaj Email Service (Gmail/Outlook)
+   - Kreiraj Template za porudžbine
+   - Kopiraj: Service ID, Template ID, Public Key
+
+3️⃣  KREIRAJ .env.local FAJL
+   Windows: copy .env.local.example .env.local
+   Mac/Linux: cp .env.local.example .env.local
+   
+   Otvori .env.local i dodaj svoje EmailJS podatke:
+   
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=tvoj_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=tvoj_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=tvoj_public_key
+
+4️⃣  DODAJ SLIKE (opciono)
+   - Stavi slike u: public/products/
+   - Otvori: data/products.ts
+   - Zameni placeholder URL-ove sa: /products/ime-slike.jpg
+
+5️⃣  POKRENI
+   npm run dev
+   
+   Otvori: http://localhost:3000
+
+═══════════════════════════════════════════════════════════
+
+✅ PROVERI DA LI RADI:
+   - Dodaj proizvod u korpu
+   - Idi na checkout
+   - Popuni formu
+   - Klikni "Poruči"
+   - Proveri email!
+
+📚 DETALJNA UPUTSTVA: vidi SETUP.md
+📖 DOKUMENTACIJA: vidi README.md
+
+═══════════════════════════════════════════════════════════
+Srećno sa prodajom! 🎁
