@@ -1,4 +1,4 @@
-import { Heart, Instagram, Mail, Phone } from 'lucide-react';
+import { Heart, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -11,11 +11,14 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <Heart className="w-6 h-6 text-rose-500 fill-rose-500" />
               <span className="text-xl font-serif font-semibold text-gray-900">
-                Pokloni<span className="text-rose-500">.</span>
+                PoklonBox<span className="text-rose-500">.</span>
               </span>
             </div>
             <p className="text-sm text-gray-600">
               Poklon koji izgleda skupo. Spremno za poklanjanje.
+            </p>
+            <p className="text-sm text-gray-600 mt-2">
+              poklonbox.rs
             </p>
           </div>
 
@@ -56,15 +59,15 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2 text-sm text-gray-600">
                 <Mail className="w-4 h-4" />
-                <span>info@pokloni.rs</span>
+                <a href="mailto:infopoklonbox@gmail.com" className="hover:text-rose-500 transition">
+                  infopoklonbox@gmail.com
+                </a>
               </li>
               <li className="flex items-center space-x-2 text-sm text-gray-600">
                 <Phone className="w-4 h-4" />
-                <span>+381 60 123 4567</span>
-              </li>
-              <li className="flex items-center space-x-2 text-sm text-gray-600">
-                <Instagram className="w-4 h-4" />
-                <span>@pokloni.rs</span>
+                <a href="tel:+381613091583" className="hover:text-rose-500 transition">
+                  061 309 1583
+                </a>
               </li>
             </ul>
           </div>
@@ -72,7 +75,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-rose-100 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Pokloni. Sva prava zadržana.
+            © {new Date().getFullYear()} PoklonBox. Sva prava zadržana.
           </p>
         </div>
       </div>

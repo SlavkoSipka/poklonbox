@@ -19,13 +19,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Pokloni - Ruže za Dan zaljubljenih | Poklon koji izgleda skupo",
+  title: "PoklonBox - Ruže za Dan zaljubljenih | Poklon koji izgleda skupo",
   description:
-    "Premium pokloni za Dan zaljubljenih. Elegantne ruže u kutijama i svetleće večne ruže u kupoli. Spremno za poklon. Brza dostava.",
+    "Premium pokloni za Dan zaljubljenih. Elegantni buketi ruža i svetleće večne ruže u kupoli. Spremno za poklon. Brza dostava. poklonbox.rs",
   openGraph: {
-    title: "Pokloni - Ruže za Dan zaljubljenih",
+    title: "PoklonBox - Ruže za Dan zaljubljenih",
     description: "Poklon koji izgleda skupo. Spremno za poklanjanje.",
     type: "website",
+    url: "https://poklonbox.rs",
   },
 };
 

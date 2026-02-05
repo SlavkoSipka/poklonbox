@@ -65,11 +65,15 @@ function SuccessContent() {
             <div className="space-y-2 text-sm text-gray-600">
               <div className="flex items-center justify-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>info@pokloni.rs</span>
+                <a href="mailto:infopoklonbox@gmail.com" className="hover:text-rose-500 transition">
+                  infopoklonbox@gmail.com
+                </a>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+381 60 123 4567</span>
+                <a href="tel:+381613091583" className="hover:text-rose-500 transition">
+                  061 309 1583
+                </a>
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Heart className="w-6 h-6 text-rose-500 fill-rose-500" />
             <span className="text-xl font-serif font-semibold text-gray-900">
-              Pokloni<span className="text-rose-500">.</span>
+              PoklonBox<span className="text-rose-500">.</span>
             </span>
           </Link>
 

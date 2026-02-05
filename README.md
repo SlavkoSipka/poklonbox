@@ -1,6 +1,8 @@
-# 🌹 Pokloni - Web Shop za Dan Zaljubljenih
+# 🌹 PoklonBox - Web Shop za Dan Zaljubljenih
 
-Premium web shop za prodaju romantičnih poklona - ruže u kutijama i svetleće večne ruže u kupoli. Izgađen sa Next.js 14, TypeScript, i Tailwind CSS.
+Premium web shop za prodaju romantičnih poklona - buketi ruža i svetleće večne ruže u kupoli. Izgrađen sa Next.js 14, TypeScript, i Tailwind CSS.
+
+**Live:** https://poklonbox.rs
 
 ![Pokloni](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)

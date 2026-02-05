@@ -242,9 +242,8 @@ Trenutno logo je tekst + ikonica.
 Otvori `components/Footer.tsx`:
 
 ```tsx
-<span>info@pokloni.rs</span>        // ← Email
-<span>+381 60 123 4567</span>       // ← Telefon
-<span>@pokloni.rs</span>            // ← Instagram
+<span>infopoklonbox@gmail.com</span>        // ← Email
+<span>061 309 1583</span>                   // ← Telefon
 ```
 
 ### Success strana
@@ -252,8 +251,8 @@ Otvori `components/Footer.tsx`:
 Otvori `app/success/page.tsx`:
 
 ```tsx
-<span>info@pokloni.rs</span>
-<span>+381 60 123 4567</span>
+<span>infopoklonbox@gmail.com</span>
+<span>061 309 1583</span>
 ```
 
 ## 📊 Praćenje Porudžbina
