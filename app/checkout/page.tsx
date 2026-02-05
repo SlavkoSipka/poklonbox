@@ -21,6 +21,13 @@ export default function CheckoutPage() {
     setIsClient(true);
   }, []);
 
+  // Redirect if cart is empty (only after client-side hydration)
+  useEffect(() => {
+    if (isClient && items.length === 0) {
+      router.push('/cart');
+    }
+  }, [isClient, items.length, router]);
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -34,14 +41,8 @@ export default function CheckoutPage() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Only redirect on client side
-  if (isClient && items.length === 0) {
-    router.push('/cart');
-    return null;
-  }
-
-  // Show loading while checking cart
-  if (!isClient) {
+  // Show loading while checking cart or if cart is empty
+  if (!isClient || items.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-white to-rose-50 py-12 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-4 border-rose-500 border-t-transparent"></div>
