@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { products } from '@/data/products';
 import { useCart } from '@/lib/cart-context';
 import { formatPrice } from '@/lib/utils';
-import { ArrowLeft, Check, ShoppingBag, Zap } from 'lucide-react';
+import { ArrowLeft, Check, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import QuantityControl from '@/components/QuantityControl';
@@ -47,13 +47,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     });
   };
 
-  const handleBuyNow = () => {
-    const selectedColorName = product.colorVariants
-      ? product.colorVariants[selectedColorIndex].colorName
-      : undefined;
-    
-    addItem(product, quantity, selectedColorName);
-    router.push('/checkout');
+  const handleGoToCart = () => {
+    router.push('/cart');
   };
 
   return (
@@ -190,17 +185,16 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 flex items-center justify-center space-x-2 bg-white text-gray-900 border-2 border-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition"
+                className="flex-1 flex items-center justify-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition shadow-lg hover:shadow-xl"
               >
                 <ShoppingBag className="w-5 h-5" />
                 <span>Dodaj u korpu</span>
               </button>
               <button
-                onClick={handleBuyNow}
-                className="flex-1 flex items-center justify-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition shadow-lg hover:shadow-xl"
+                onClick={handleGoToCart}
+                className="flex-1 flex items-center justify-center space-x-2 bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition"
               >
-                <Zap className="w-5 h-5" />
-                <span>Kupi odmah</span>
+                <span>Idi u korpu</span>
               </button>
             </div>
 

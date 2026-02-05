@@ -333,8 +333,8 @@ export default function CheckoutPage() {
 
                 {/* Items */}
                 <div className="space-y-4 mb-6">
-                  {items.map((item) => (
-                    <div key={item.product.id} className="flex gap-3">
+                  {items.map((item, index) => (
+                    <div key={`${item.product.id}-${item.selectedColor || 'default'}-${index}`} className="flex gap-3">
                       <div className="relative w-16 h-20 bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg overflow-hidden flex-shrink-0">
                         <Image
                           src={item.product.images[0]}

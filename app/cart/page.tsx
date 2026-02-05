@@ -45,9 +45,9 @@ export default function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
-            {items.map((item) => (
+            {items.map((item, index) => (
               <div
-                key={item.product.id}
+                key={`${item.product.id}-${item.selectedColor || 'default'}-${index}`}
                 className="bg-white rounded-2xl shadow-sm border border-rose-100 p-6"
               >
                 <div className="flex flex-col sm:flex-row gap-6">
