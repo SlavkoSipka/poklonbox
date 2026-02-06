@@ -25,6 +25,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     notFound();
   }
 
+  // Check if product is a teddy (medvedić)
+  const isTeddy = product.category === 'TEDDY';
+
   // Use color variant images if available, otherwise use default images
   const displayImages = product.colorVariants
     ? product.colorVariants[selectedColorIndex].images
@@ -87,13 +90,13 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
           {/* Image Gallery */}
           <div>
             {/* Main Image */}
-            <div className="relative aspect-[3/4] mb-4 bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl overflow-hidden">
+            <div className={`relative mb-4 rounded-2xl overflow-hidden ${isTeddy ? 'aspect-square bg-gradient-to-br from-rose-50 to-amber-50' : 'aspect-[3/4] bg-gradient-to-br from-rose-50 to-amber-50'}`}>
               <Image
                 src={displayImages[selectedImage]}
                 alt={product.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className={isTeddy ? 'object-contain p-8' : 'object-cover'}
                 priority
               />
               {product.badge && (

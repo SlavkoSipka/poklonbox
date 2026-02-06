@@ -48,8 +48,18 @@ export default function HomePage() {
       <StructuredData data={websiteSchema} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-rose-50 via-white to-amber-50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/hero-pattern.svg')] opacity-5"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-20 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/products/hero (1).png')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-rose-50/80"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center space-x-2 bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Heart className="w-4 h-4 fill-rose-600" />

@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NavigationProgress from "@/components/NavigationProgress";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ScrollToTop from "@/components/ScrollToTop";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -92,6 +93,7 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
         <GoogleAnalytics />
+        <ScrollToTop />
         <CartProvider>
           <NavigationProgress />
           <div className="flex flex-col min-h-screen">
