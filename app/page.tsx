@@ -50,14 +50,14 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-br from-rose-50 via-white to-amber-50 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center"
+          className="absolute inset-0 opacity-40 bg-cover bg-center"
           style={{
             backgroundImage: "url('/products/hero (1).png')",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-rose-50/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-rose-50/50"></div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
