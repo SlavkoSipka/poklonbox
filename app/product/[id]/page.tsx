@@ -259,8 +259,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <div className="mt-8 bg-rose-50 rounded-2xl p-6">
               <p className="text-sm text-gray-600">
                 <strong className="text-gray-900">Spremno za poklon:</strong> Svaki
-                proizvod dolazi u premium pakovanju, spreman za poklanjanje. Brza dostava
-                brzom poštom.
+                proizvod dolazi u premium pakovanju, spreman za poklanjanje.
               </p>
             </div>
           </div>

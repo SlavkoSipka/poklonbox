@@ -49,7 +49,7 @@ function SuccessContent() {
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-rose-500 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-600">
-                  Javićemo Vam se u najkraćem roku radi potvrde i detalja dostave
+                  Javićemo Vam se u najkraćem roku radi potvrde i dodatnih detalja
                 </span>
               </li>
               <li className="flex items-start space-x-3">

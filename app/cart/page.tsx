@@ -137,10 +137,6 @@ export default function CartPage() {
                   <span>Proizvodi ({items.length})</span>
                   <span>{formatPrice(totalPrice)}</span>
                 </div>
-                <div className="flex justify-between text-gray-600">
-                  <span>Dostava</span>
-                  <span className="text-rose-500 font-medium">Izračunava se</span>
-                </div>
               </div>
 
               <div className="border-t border-gray-200 pt-4 mb-6">

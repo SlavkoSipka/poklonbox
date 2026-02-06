@@ -150,7 +150,7 @@ export default function CheckoutPage() {
             {/* Form */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl shadow-sm border border-rose-100 p-6 mb-6">
-                <h2 className="font-semibold text-gray-900 mb-6">Podaci za dostavu</h2>
+                <h2 className="font-semibold text-gray-900 mb-6">Podaci za slanje</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* First Name */}
@@ -330,7 +330,6 @@ export default function CheckoutPage() {
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Plaćanje pouzećem ili uplatom nakon potvrde</li>
                   <li>• Javićemo Vam se telefonom ili email-om za potvrdu</li>
-                  <li>• Dostava u roku od 2-5 radnih dana</li>
                   <li>• Svi proizvodi dolaze spremni za poklon</li>
                 </ul>
               </div>
@@ -371,17 +370,6 @@ export default function CheckoutPage() {
                       </div>
                     </div>
                   ))}
-                </div>
-
-                <div className="border-t border-gray-200 pt-4 mb-6">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-600">Proizvodi</span>
-                    <span className="font-semibold">{formatPrice(totalPrice)}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Dostava</span>
-                    <span className="text-sm text-rose-500">Po dogovoru</span>
-                  </div>
                 </div>
 
                 <div className="border-t border-gray-200 pt-4 mb-6">
