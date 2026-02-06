@@ -57,39 +57,42 @@ export default function HomePage() {
             backgroundSize: 'cover',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-rose-50/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-rose-50/60"></div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Heart className="w-4 h-4 fill-rose-600" />
-              <span>Savršeno za rođendane, godišnjice, 14. februar ili „samo zato"</span>
-            </div>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Poklon koji se <span className="text-rose-500">pamti</span>
-            </h1>
-            <div className="text-base md:text-lg text-gray-700 mb-8 space-y-4 text-left max-w-2xl mx-auto">
-              <p className="leading-relaxed">
-                Ne poklanjaj samo stvar. Pokloni osećaj.
-              </p>
-              <p className="leading-relaxed">
-                Znaš onaj trenutak kad se neko nasmeje čim otvori poklon? E baš takve trenutke pravimo mi.
-              </p>
-              <p className="leading-relaxed">
-                Na PoklonBox-u biraš poklone koji govore „mislim na tebe", „volim te" i „poseban/posebna si" — bez komplikovanja.
-              </p>
-              <p className="leading-relaxed font-medium text-gray-900">
-                Sve je već spremno za poklanjanje. Ti samo izabereš, mi šaljemo brzo na tvoju adresu.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link
-                href="/shop"
-                className="inline-flex items-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition shadow-lg hover:shadow-xl"
-              >
-                <span>Pogledaj poklone</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+          {/* Text container with semi-transparent background */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-10 shadow-lg">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center space-x-2 bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Heart className="w-4 h-4 fill-rose-600" />
+                <span>Savršeno za rođendane, godišnjice, 14. februar ili „samo zato"</span>
+              </div>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Poklon koji se <span className="text-rose-500">pamti</span>
+              </h1>
+              <div className="text-base md:text-lg text-gray-700 mb-8 space-y-4 text-left max-w-2xl mx-auto">
+                <p className="leading-relaxed">
+                  Ne poklanjaj samo stvar. Pokloni osećaj.
+                </p>
+                <p className="leading-relaxed">
+                  Znaš onaj trenutak kad se neko nasmeje čim otvori poklon? E baš takve trenutke pravimo mi.
+                </p>
+                <p className="leading-relaxed">
+                  Na PoklonBox-u biraš poklone koji govore „mislim na tebe", „volim te" i „poseban/posebna si" — bez komplikovanja.
+                </p>
+                <p className="leading-relaxed font-medium text-gray-900">
+                  Sve je već spremno za poklanjanje. Ti samo izabereš, mi šaljemo brzo na tvoju adresu.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition shadow-lg hover:shadow-xl"
+                >
+                  <span>Pogledaj poklone</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
