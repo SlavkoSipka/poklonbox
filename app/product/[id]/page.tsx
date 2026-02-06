@@ -234,7 +234,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             </div>
 
             {/* Actions */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <button
                 onClick={handleAddToCart}
                 className="flex-1 flex items-center justify-center space-x-2 bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition shadow-lg hover:shadow-xl"
@@ -248,6 +248,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               >
                 <span>Idi u korpu</span>
               </button>
+            </div>
+
+            {/* Napomena o pakovanju */}
+            <div className="text-xs text-gray-400 italic mb-6">
+              * Pakovanja se mogu neznatno razlikovati u odnosu na prikazane slike.
             </div>
 
             {/* Info Box */}
