@@ -38,64 +38,69 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-rose-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-          Korpa
-        </h1>
+        {/* Header with cart icon */}
+        <div className="flex items-center space-x-3 mb-8">
+          <div className="flex items-center justify-center w-12 h-12 bg-rose-100 rounded-full">
+            <ShoppingBag className="w-6 h-6 text-rose-500" />
+          </div>
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-gray-900">
+            Korpa ({items.length})
+          </h1>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3">
             {items.map((item, index) => (
               <div
                 key={`${item.product.id}-${item.selectedColor || 'default'}-${item.selectedSize || 'default'}-${index}`}
-                className="bg-white rounded-2xl shadow-sm border border-rose-100 p-6"
+                className="bg-white rounded-xl shadow-sm border border-rose-100 p-4"
               >
-                <div className="flex flex-col sm:flex-row gap-6">
-                  {/* Image */}
-                  <div className="relative w-full sm:w-32 aspect-[3/4] bg-gradient-to-br from-rose-50 to-amber-50 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="flex gap-4">
+                  {/* Image - kompaktnija za mobilni */}
+                  <div className="relative w-20 h-24 sm:w-24 sm:h-28 bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
                       src={item.product.images[0]}
                       alt={item.product.name}
                       fill
-                      sizes="(max-width: 640px) 100vw, 128px"
+                      sizes="96px"
                       className="object-cover"
                     />
                   </div>
 
-                  {/* Info */}
-                  <div className="flex-1">
+                  {/* Info - horizontalno preglednije */}
+                  <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-start mb-2">
-                      <div>
+                      <div className="flex-1 pr-2">
                         <Link
                           href={`/product/${item.product.id}`}
-                          className="font-semibold text-gray-900 hover:text-rose-500 transition"
+                          className="font-semibold text-gray-900 hover:text-rose-500 transition line-clamp-1 text-sm sm:text-base"
                         >
                           {item.product.name}
                         </Link>
-                        <p className="text-sm text-gray-500 mt-1">
-                          {item.product.shortDesc}
-                        </p>
-                        {item.selectedColor && (
-                          <p className="text-sm font-medium text-rose-600 mt-1">
-                            Boja: {item.selectedColor}
-                          </p>
-                        )}
-                        {item.selectedSize && (
-                          <p className="text-sm font-medium text-gray-600 mt-1">
-                            Veličina: {item.selectedSize}
-                          </p>
-                        )}
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          {item.selectedColor && (
+                            <span className="text-xs font-medium text-rose-600 bg-rose-50 px-2 py-0.5 rounded">
+                              {item.selectedColor}
+                            </span>
+                          )}
+                          {item.selectedSize && (
+                            <span className="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-0.5 rounded">
+                              {item.selectedSize}
+                            </span>
+                          )}
+                        </div>
                       </div>
                       <button
                         onClick={() => removeItem(item.product.id, item.selectedColor, item.selectedSize)}
-                        className="text-gray-400 hover:text-rose-500 transition"
-                        aria-label="Ukloni iz korpe"
+                        className="text-gray-400 hover:text-rose-500 transition flex-shrink-0"
+                        aria-label="Ukloni"
                       >
                         <Trash2 className="w-5 h-5" />
                       </button>
                     </div>
 
-                    <div className="flex items-center justify-between mt-4">
+                    <div className="flex items-center justify-between mt-3">
                       <QuantityControl
                         quantity={item.quantity}
                         onIncrease={() =>
@@ -106,11 +111,11 @@ export default function CartPage() {
                         }
                       />
                       <div className="text-right">
-                        <div className="text-lg font-bold text-gray-900">
+                        <div className="text-base sm:text-lg font-bold text-gray-900">
                           {formatPrice(item.product.price * item.quantity)}
                         </div>
                         {item.quantity > 1 && (
-                          <div className="text-sm text-gray-500">
+                          <div className="text-xs text-gray-500">
                             {formatPrice(item.product.price)} × {item.quantity}
                           </div>
                         )}
