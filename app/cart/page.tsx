@@ -47,7 +47,7 @@ export default function CartPage() {
           <div className="lg:col-span-2 space-y-4">
             {items.map((item, index) => (
               <div
-                key={`${item.product.id}-${item.selectedColor || 'default'}-${index}`}
+                key={`${item.product.id}-${item.selectedColor || 'default'}-${item.selectedSize || 'default'}-${index}`}
                 className="bg-white rounded-2xl shadow-sm border border-rose-100 p-6"
               >
                 <div className="flex flex-col sm:flex-row gap-6">
@@ -79,9 +79,14 @@ export default function CartPage() {
                             Boja: {item.selectedColor}
                           </p>
                         )}
+                        {item.selectedSize && (
+                          <p className="text-sm font-medium text-gray-600 mt-1">
+                            Veličina: {item.selectedSize}
+                          </p>
+                        )}
                       </div>
                       <button
-                        onClick={() => removeItem(item.product.id)}
+                        onClick={() => removeItem(item.product.id, item.selectedColor, item.selectedSize)}
                         className="text-gray-400 hover:text-rose-500 transition"
                         aria-label="Ukloni iz korpe"
                       >
@@ -93,10 +98,10 @@ export default function CartPage() {
                       <QuantityControl
                         quantity={item.quantity}
                         onIncrease={() =>
-                          updateQuantity(item.product.id, item.quantity + 1)
+                          updateQuantity(item.product.id, item.quantity + 1, item.selectedColor, item.selectedSize)
                         }
                         onDecrease={() =>
-                          updateQuantity(item.product.id, item.quantity - 1)
+                          updateQuantity(item.product.id, item.quantity - 1, item.selectedColor, item.selectedSize)
                         }
                       />
                       <div className="text-right">

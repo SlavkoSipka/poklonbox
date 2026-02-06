@@ -102,4 +102,101 @@ export const products: Product[] = [
     images: ['/products/crvena-ruza-1.jpg'],
     sku: 'DOME-RED-001',
   },
+
+  // MEDVEDIĆI OD RUŽA - 3 veličine
+  {
+    id: 'plavi-meda',
+    name: 'Plavi medvedić od ruža',
+    category: 'TEDDY',
+    price: 1799, // Cena za malog
+    shortDesc: 'Plavi medvedić od ruža u luksuznoj poklon kutiji. Izaberi veličinu!',
+    description: 'Apsolutno prelepi plavi medvedić napravljen od stotina mini ruža. Dolazi u ekskluzivnoj providnoj poklon kutiji sa zlatnim detaljima i crnom mašnom. Idealan poklon koji ostavlja bez daha. Dostupan u 3 veličine.',
+    features: [
+      'Napravljen od mini ruža',
+      'Luksuzna poklon kutija',
+      '3 veličine: Mali, Srednji, Veliki',
+      'Crna satenska mašna',
+      'Zlatni detalji',
+      'Ne vene - večan poklon',
+    ],
+    images: ['/products/plavi meda velicine.png'],
+    sizes: [
+      { size: 'Mali', price: 1799 },
+      { size: 'Srednji', price: 2799 },
+      { size: 'Veliki', price: 3899 },
+    ],
+    badge: 'TOP',
+    sku: 'TEDDY-BLUE-001',
+  },
+  {
+    id: 'roze-meda',
+    name: 'Roze medvedić od ruža',
+    category: 'TEDDY',
+    price: 1799, // Cena za malog
+    shortDesc: 'Romantični roze medvedić od ruža. Izaberi veličinu!',
+    description: 'Šarmantni roze medvedić napravljen od stotina mini ruža. Savršen romantični poklon za Dan zaljubljenih. Dolazi u elegantnoj poklon kutiji spremnoj za poklanjanje. Dostupan u 3 veličine.',
+    features: [
+      'Napravljen od mini ruža',
+      'Roze satenska mašna',
+      '3 veličine: Mali, Srednji, Veliki',
+      'Premium poklon pakovanje',
+      'Romantičan poklon',
+      'Ne vene - večan poklon',
+    ],
+    images: ['/products/roze meda velicine.png'],
+    sizes: [
+      { size: 'Mali', price: 1799 },
+      { size: 'Srednji', price: 2799 },
+      { size: 'Veliki', price: 3899 },
+    ],
+    badge: 'Najprodavanije',
+    sku: 'TEDDY-PINK-001',
+  },
+  {
+    id: 'beli-meda',
+    name: 'Beli medvedić od ruža',
+    category: 'TEDDY',
+    price: 1799, // Cena za malog
+    shortDesc: 'Elegantan beli medvedić od ruža u luksuznoj kutiji. Izaberi veličinu!',
+    description: 'Sofisticiran beli medvedić napravljen od stotina bele mini ruža. Dolazi u ekskluzivnoj providnoj poklon kutiji sa zlatnim detaljima i elegantnom crnom mašnom. Luksuzni poklon za posebne trenutke. Dostupan u 3 veličine.',
+    features: [
+      'Napravljen od bele mini ruža',
+      'Luksuzna poklon kutija',
+      '3 veličine: Mali, Srednji, Veliki',
+      'Crna satenska mašna',
+      'Zlatni detalji',
+      'Ne vene - večan poklon',
+    ],
+    images: ['/products/beli meda velicine.png'],
+    sizes: [
+      { size: 'Mali', price: 1799 },
+      { size: 'Srednji', price: 2799 },
+      { size: 'Veliki', price: 3899 },
+    ],
+    badge: 'Premium',
+    sku: 'TEDDY-WHITE-001',
+  },
+  {
+    id: 'crveni-meda',
+    name: 'Crveni medvedić od ruža',
+    category: 'TEDDY',
+    price: 1799, // Cena za malog
+    shortDesc: 'Klasičan crveni medvedić od ruža. Izaberi veličinu!',
+    description: 'Prekrasan crveni medvedić napravljen od stotina crvenih mini ruža. Klasičan i romantičan poklon za Dan zaljubljenih i sve posebne prilike. Dolazi u elegantnoj poklon kutiji. Dostupan u 3 veličine.',
+    features: [
+      'Napravljen od crvene mini ruža',
+      'Crna satenska mašna',
+      '3 veličine: Mali, Srednji, Veliki',
+      'Premium poklon pakovanje',
+      'Klasičan romantičan poklon',
+      'Ne vene - večan poklon',
+    ],
+    images: ['/products/crveni mena velicine.png'],
+    sizes: [
+      { size: 'Mali', price: 1799 },
+      { size: 'Srednji', price: 2799 },
+      { size: 'Veliki', price: 3899 },
+    ],
+    sku: 'TEDDY-RED-001',
+  },
 ];

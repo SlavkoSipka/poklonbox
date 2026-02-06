@@ -344,7 +344,7 @@ export default function CheckoutPage() {
                 {/* Items */}
                 <div className="space-y-4 mb-6">
                   {items.map((item, index) => (
-                    <div key={`${item.product.id}-${item.selectedColor || 'default'}-${index}`} className="flex gap-3">
+                    <div key={`${item.product.id}-${item.selectedColor || 'default'}-${item.selectedSize || 'default'}-${index}`} className="flex gap-3">
                       <div className="relative w-16 h-20 bg-gradient-to-br from-rose-50 to-amber-50 rounded-lg overflow-hidden flex-shrink-0">
                         <Image
                           src={item.product.images[0]}
@@ -359,6 +359,9 @@ export default function CheckoutPage() {
                         </p>
                         {item.selectedColor && (
                           <p className="text-xs text-rose-600">Boja: {item.selectedColor}</p>
+                        )}
+                        {item.selectedSize && (
+                          <p className="text-xs text-gray-600">Veličina: {item.selectedSize}</p>
                         )}
                         <p className="text-sm text-gray-500">Količina: {item.quantity}</p>
                         <p className="text-sm font-semibold text-gray-900">

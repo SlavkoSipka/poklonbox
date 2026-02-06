@@ -15,7 +15,8 @@ export async function sendOrderEmail(order: OrderData): Promise<void> {
   const itemsList = order.items
     .map((item) => {
       const colorText = item.selectedColor ? ` (Boja: ${item.selectedColor})` : '';
-      return `${item.product.name}${colorText} - Količina: ${item.quantity} - Cena: ${formatPrice(
+      const sizeText = item.selectedSize ? ` - Veličina: ${item.selectedSize}` : '';
+      return `${item.product.name}${colorText}${sizeText} - Količina: ${item.quantity} - Cena: ${formatPrice(
         item.product.price * item.quantity
       )}`;
     })

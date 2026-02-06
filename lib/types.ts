@@ -1,9 +1,14 @@
-export type ProductCategory = 'BOX' | 'DOME';
+export type ProductCategory = 'BOX' | 'DOME' | 'TEDDY';
 
 export interface ColorVariant {
   color: string;
   colorName: string;
   images: string[];
+}
+
+export interface SizeOption {
+  size: string;
+  price: number;
 }
 
 export interface Product {
@@ -19,6 +24,7 @@ export interface Product {
   badge?: string;
   variants?: string[];
   colorVariants?: ColorVariant[];
+  sizes?: SizeOption[]; // Veličine za medvediće
   sku: string;
 }
 
@@ -26,6 +32,7 @@ export interface CartItem {
   product: Product;
   quantity: number;
   selectedColor?: string; // Npr. "Crvena", "Roze", etc.
+  selectedSize?: string; // Npr. "Mali", "Srednji", "Veliki"
 }
 
 export interface OrderData {

@@ -19,6 +19,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+  const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
 
   if (!product) {
     notFound();
@@ -29,9 +30,18 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     ? product.colorVariants[selectedColorIndex].images
     : product.images;
 
+  // Get current price based on selected size (if sizes exist)
+  const currentPrice = product.sizes
+    ? product.sizes[selectedSizeIndex].price
+    : product.price;
+
   const handleColorChange = (index: number) => {
     setSelectedColorIndex(index);
     setSelectedImage(0); // Reset to first image when color changes
+  };
+
+  const handleSizeChange = (index: number) => {
+    setSelectedSizeIndex(index);
   };
 
   const handleAddToCart = () => {
@@ -39,10 +49,20 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       ? product.colorVariants[selectedColorIndex].colorName
       : undefined;
     
-    addItem(product, quantity, selectedColorName);
+    const selectedSizeName = product.sizes
+      ? product.sizes[selectedSizeIndex].size
+      : undefined;
+    
+    // Create a modified product with the correct price for the selected size
+    const productToAdd = product.sizes
+      ? { ...product, price: product.sizes[selectedSizeIndex].price }
+      : product;
+    
+    addItem(productToAdd, quantity, selectedColorName, selectedSizeName);
     
     const colorText = selectedColorName ? ` (${selectedColorName})` : '';
-    toast.success(`Dodato u korpu: ${product.name}${colorText}`, {
+    const sizeText = selectedSizeName ? ` - ${selectedSizeName}` : '';
+    toast.success(`Dodato u korpu: ${product.name}${colorText}${sizeText}`, {
       icon: '🛍️',
     });
   };
@@ -117,7 +137,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             {/* Price */}
             <div className="flex items-center space-x-4 mb-8">
               <span className="text-4xl font-bold text-gray-900">
-                {formatPrice(product.price)}
+                {formatPrice(currentPrice)}
               </span>
               {product.oldPrice && (
                 <span className="text-xl text-gray-400 line-through">
@@ -146,6 +166,33 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                         style={{ backgroundColor: variant.color }}
                       />
                       <span className="font-medium text-gray-900">{variant.colorName}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Size Selection (for teddies) */}
+            {product.sizes && product.sizes.length > 0 && (
+              <div className="mb-8">
+                <h2 className="font-semibold text-gray-900 mb-3">Izaberi veličinu</h2>
+                <div className="grid grid-cols-3 gap-3">
+                  {product.sizes.map((sizeOption, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSizeChange(idx)}
+                      className={`px-6 py-4 rounded-xl border-2 transition text-center ${
+                        selectedSizeIndex === idx
+                          ? 'border-rose-500 bg-rose-50'
+                          : 'border-gray-200 hover:border-rose-200'
+                      }`}
+                    >
+                      <div className="font-semibold text-gray-900 mb-1">
+                        {sizeOption.size}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        {formatPrice(sizeOption.price)}
+                      </div>
                     </button>
                   ))}
                 </div>
