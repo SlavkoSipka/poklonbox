@@ -2,13 +2,50 @@ import Link from 'next/link';
 import { ArrowRight, Gift, Heart, Sparkles, Truck } from 'lucide-react';
 import { products } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
+import StructuredData from '@/components/StructuredData';
 
 export default function HomePage() {
   const bestsellers = products.filter((p) => p.badge === 'Najprodavanije');
   const featured = products.slice(0, 4);
 
+  // Structured data for organization
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'PoklonBox',
+    url: 'https://poklonbox.rs',
+    logo: 'https://poklonbox.rs/logo.png',
+    description: 'Premium pokloni za Dan zaljubljenih - ruže, medvedići od ruža i svetleće večne ruže',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'RS',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+381-61-309-1583',
+      email: 'infopoklonbox@gmail.com',
+      contactType: 'Customer Service',
+    },
+    sameAs: [],
+  };
+
+  // Structured data for website
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'PoklonBox',
+    url: 'https://poklonbox.rs',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://poklonbox.rs/shop?search={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <StructuredData data={organizationSchema} />
+      <StructuredData data={websiteSchema} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-rose-50 via-white to-amber-50 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/hero-pattern.svg')] opacity-5"></div>

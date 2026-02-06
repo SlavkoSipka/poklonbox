@@ -92,6 +92,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 src={displayImages[selectedImage]}
                 alt={product.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority
               />
@@ -119,6 +120,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                       src={image}
                       alt={`${product.name} ${idx + 1}`}
                       fill
+                      sizes="(max-width: 1024px) 25vw, 12vw"
                       className="object-cover"
                     />
                   </button>

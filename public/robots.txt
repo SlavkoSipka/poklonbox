@@ -1,0 +1,12 @@
+# robots.txt for poklonbox.rs
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://poklonbox.rs/sitemap.xml
+
+# Disallow admin/checkout pages from crawling
+User-agent: *
+Disallow: /checkout
+Disallow: /cart
